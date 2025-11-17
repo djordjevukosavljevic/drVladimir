@@ -36,7 +36,13 @@ public class MessageController
     @PostMapping
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
-        messageService.sendMessage(message);
+        messageService.saveMessage(message);
         return ResponseEntity.ok("Messsge sent");
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public void deleteMessage(@PathVariable Integer id)
+    {
+        messageService.deleteMessageById(id);
     }
 }

@@ -29,9 +29,14 @@ public class MessageService
         return messageRepository.findById(id);
     }
 
-    public void sendMessage(Message message)
+    public void saveMessage(Message message)
     {
         messageRepository.save(message);
+    }
+
+    public void deleteMessageById(Integer id)
+    {
+        messageRepository.deleteById(id);
     }
 }
 
