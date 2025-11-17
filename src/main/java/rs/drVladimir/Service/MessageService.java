@@ -13,6 +13,7 @@ public class MessageService
 {
     @Autowired
     private final MessageRepository messageRepository;
+
     public MessageService(MessageRepository messageRepository)
     {
         this.messageRepository = messageRepository;
