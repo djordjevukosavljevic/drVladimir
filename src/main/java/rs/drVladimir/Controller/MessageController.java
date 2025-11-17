@@ -1,6 +1,7 @@
 package rs.drVladimir.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rs.drVladimir.Entity.Message;
 import rs.drVladimir.Service.MessageService;
@@ -33,8 +34,9 @@ public class MessageController
     }
 
     @PostMapping
-    public void sendMessage(@RequestBody Message message)
+    public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
         messageService.sendMessage(message);
+        return ResponseEntity.ok("Messsge sent");
     }
 }
