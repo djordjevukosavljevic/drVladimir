@@ -28,4 +28,11 @@ public class MessageService
     {
         return messageRepository.findById(id);
     }
+
+    public void sendMessage(Message message)
+    {
+        messageRepository.save(message);
+    }
 }
+
+

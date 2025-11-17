@@ -1,9 +1,7 @@
 package rs.drVladimir.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rs.drVladimir.Entity.Message;
 import rs.drVladimir.Service.MessageService;
 
@@ -32,5 +30,11 @@ public class MessageController
     public Optional<Message> findMessageById(Integer id)
     {
         return messageService.findMessageById(id);
+    }
+
+    @PostMapping
+    public void sendMessage(@RequestBody Message message)
+    {
+        messageService.sendMessage(message);
     }
 }
