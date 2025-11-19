@@ -6,24 +6,29 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
+
 @Entity(name = "image")
 public class Image
 {
     @Id
-    @Column(name = "image_id")
+    @Column(name = "id")
     @JsonFormat
     public Integer id;
-    @Column(name = "imgName")
+    @Column(name = "name")
     @JsonFormat
-    public String imgName;
+    public String name;
     @Column(name = "path")
     @JsonFormat
     public String path;
     @Column(name = "size")
     @JsonFormat
     public double size;
-    @Column(name = "filetype")
-    public FILE_TYPE filetype;
-
+    @Column(name = "created_at")
+    @JsonFormat
+    public LocalDateTime createAt = LocalDateTime.now();
+    @Column(name = "extns")
+    @JsonFormat
+    public FILE_TYPE extns;
     private enum FILE_TYPE {JPG, JPEG, PNG}
 }
