@@ -30,5 +30,5 @@ public class Image
     @Column(name = "extns")
     @JsonFormat
     public FILE_TYPE extns;
-    private enum FILE_TYPE {JPG, JPEG, PNG}
+    private enum FILE_TYPE {JPG, JPEG, PNG, SVG}
 }

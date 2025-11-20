@@ -6,6 +6,7 @@ import rs.drVladimir.Entity.Image;
 import rs.drVladimir.Repository.ImageRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ImageService
@@ -21,5 +22,15 @@ public class ImageService
     public List<Image> getAllImages()
     {
         return imageRepository.findAll();
+    }
+
+    public Optional<Image> findImageById(Integer id)
+    {
+        return imageRepository.findById(id);
+    }
+
+    public void postImage(Image image)
+    {
+        imageRepository.save(image);
     }
 }

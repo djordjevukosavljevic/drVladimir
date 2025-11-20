@@ -1,10 +1,11 @@
 package rs.drVladimir.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import rs.drVladimir.Entity.Image;
 import rs.drVladimir.Service.ImageService;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/image")
@@ -18,4 +19,21 @@ public class ImageController
         this.imageService = imageService;
     }
 
+    @GetMapping
+    public List<Image> getAllImages()
+    {
+        return imageService.getAllImages();
+    }
+
+    @GetMapping(path = "/{id}")
+    public Optional<Image> findImgById(@PathVariable Integer id)
+    {
+        return imageService.findImageById(id);
+    }
+
+    @PostMapping
+    public void saveImage(@RequestBody Image image)
+    {
+        imageService.postImage(image);
+    }
 }
