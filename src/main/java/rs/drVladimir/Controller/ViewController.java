@@ -11,4 +11,22 @@ public class ViewController
     {
         return "index";
     }
+
+    @GetMapping("/about")
+    public String aboutView()
+    {
+        return "about";
+    }
+
+    @GetMapping("/services")
+    public String servicesView()
+    {
+        return "services";
+    }
+
+    @GetMapping("/contact")
+    public String contactView()
+    {
+        return "contact";
+    }
 }
