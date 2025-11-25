@@ -36,4 +36,10 @@ public class ImageController
     {
         imageService.postImage(image);
     }
+
+    @DeleteMapping
+    public void deleteImage(@PathVariable Integer id)
+    {
+        imageService.deleteImage(id);
+    }
 }

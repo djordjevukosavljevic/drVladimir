@@ -33,4 +33,9 @@ public class ImageService
     {
         imageRepository.save(image);
     }
+
+    public void deleteImage(Integer id)
+    {
+        imageRepository.deleteById(id);
+    }
 }
