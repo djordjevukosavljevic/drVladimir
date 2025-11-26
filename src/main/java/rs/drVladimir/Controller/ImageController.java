@@ -42,4 +42,10 @@ public class ImageController
     {
         imageService.deleteImage(id);
     }
+
+    @PutMapping(path = "/{id}")
+    public void updateImage(@RequestBody Image image)
+    {
+        imageService.updateImage(image);
+    }
 }
