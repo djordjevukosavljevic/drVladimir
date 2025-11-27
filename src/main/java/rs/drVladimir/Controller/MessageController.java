@@ -1,7 +1,9 @@
 package rs.drVladimir.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 import rs.drVladimir.Entity.Message;
@@ -41,7 +43,15 @@ public class MessageController
     public ResponseEntity<String> sendMessage(@RequestBody Message message)
     {
         messageService.saveMessage(message);
-        return ResponseEntity.ok("Messsge sent");
+        try
+        {
+            sendMail(message);
+            return ResponseEntity.ok("Message sent successfully.");
+        } catch (Exception e)
+        {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to send a message.");
+        }
     }
 
     @DeleteMapping(path = "/{id}")
@@ -51,7 +61,14 @@ public class MessageController
     }
 
 
-
+    public void sendMail(Message message)
+    {
+        SimpleMailMessage email = new SimpleMailMessage();
+        email.setSubject(message.getSubject());
+        email.setTo("djordje.vukosavljevic01@gmail.com");
+        email.setText(buildEmailBody(message));
+        mailSender.send(email);
+    }
 
 
     public String buildEmailBody(Message m)

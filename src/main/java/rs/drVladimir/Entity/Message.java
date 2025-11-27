@@ -2,9 +2,7 @@ package rs.drVladimir.Entity;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +18,7 @@ public class Message
     @Id
     @Column(name = "id")
     @JsonFormat
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "date_created_at")
     @JsonFormat
