@@ -66,6 +66,7 @@ public class MessageController
         SimpleMailMessage email = new SimpleMailMessage();
         email.setSubject(message.getSubject());
         email.setTo("djordje.vukosavljevic01@gmail.com");
+        email.setCc(message.getEmail());
         email.setText(buildEmailBody(message));
         mailSender.send(email);
     }
