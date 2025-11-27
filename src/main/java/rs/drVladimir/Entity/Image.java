@@ -40,9 +40,7 @@ public class Image
 
     @Column(name = "extns")
     @JsonFormat
-    public FILE_TYPE extns;
-    private enum FILE_TYPE {JPG, JPEG, PNG, SVG}
-
+    private String extns;
 
     //    Not sure why I actually need hardcoded getters cuz I implemented them using
     //    lombok, but I guess they do not work
@@ -67,7 +65,7 @@ public class Image
         return createAt;
     }
 
-    public FILE_TYPE getExtns() {
+    public String getExtns() {
         return extns;
     }
 
