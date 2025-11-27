@@ -29,4 +29,16 @@ public class ViewController
     {
         return "contact";
     }
+
+    @GetMapping("/experience")
+    public String experienceView()
+    {
+        return "experience";
+    }
+
+    @GetMapping("/equipment")
+    public String equipmentView()
+    {
+        return "equipment";
+    }
 }
