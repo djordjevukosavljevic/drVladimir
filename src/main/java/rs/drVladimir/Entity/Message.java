@@ -5,13 +5,18 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity(name = "message")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Message
 {
-
     @Id
     @Column(name = "id")
     @JsonFormat
@@ -35,4 +40,37 @@ public class Message
     private String subject;
 
     private String message;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public LocalDateTime getCreatedAt()
+    {
+        return dateCreatedAt;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }
