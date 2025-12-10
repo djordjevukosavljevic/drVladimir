@@ -11,9 +11,9 @@ import java.util.Optional;
 @RequestMapping(path = "/api/image")
 public class ImageController
 {
-    @Autowired
     private final ImageService imageService;
 
+    @Autowired
     public ImageController(ImageService imageService)
     {
         this.imageService = imageService;

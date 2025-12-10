@@ -12,7 +12,7 @@ public class Equipment
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     @JsonFormat
-    private int id;
+    private Integer id;
     @Column(name = "deviceName")
     @JsonFormat
     private String deviceName;
