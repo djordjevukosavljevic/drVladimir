@@ -7,5 +7,4 @@ import rs.drVladimir.Entity.Equipment;
 @Repository
 public interface EquipmentRepository extends JpaRepository<Equipment, Integer>
 {
-    String findEquipmentByName(String deviceName);
 }

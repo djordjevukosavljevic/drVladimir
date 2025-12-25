@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class Image
 {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     @JsonFormat

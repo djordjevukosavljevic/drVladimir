@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 public class Equipment
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @JsonFormat
     private Integer id;

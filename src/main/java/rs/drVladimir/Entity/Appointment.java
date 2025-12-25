@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Appointment
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @JsonFormat
     private int id;
