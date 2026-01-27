@@ -3,6 +3,8 @@ package rs.drVladimir.Entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity(name = "appointment")
 public class Appointment
 {
@@ -10,5 +12,21 @@ public class Appointment
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @JsonFormat
-    private int id;
+    private Integer id;
+
+    private String name;
+
+    private String lastname;
+
+    private String email;
+
+    private String mobileNumber;
+
+    private String message;
+
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    private LocalDateTime createdFor;
+
+
 }

@@ -2,10 +2,10 @@ package rs.drVladimir.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import rs.drVladimir.Entity.Equipment;
+import rs.drVladimir.Entity.Appointment;
 
 @Repository
-public interface EquipmentRepository extends JpaRepository<Equipment, Integer>
+public interface AppointmentRepository extends JpaRepository<Appointment, Integer>
 {
 
 }
