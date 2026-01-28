@@ -16,4 +16,6 @@ public class EquipmentController
     {
         this.equipmentService = equipmentService;
     }
+
+
 }
