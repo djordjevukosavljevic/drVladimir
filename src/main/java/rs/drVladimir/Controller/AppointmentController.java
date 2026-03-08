@@ -28,4 +28,10 @@ public class AppointmentController
     {
         return service.getAllAppointments();
     }
+
+    @GetMapping
+    public Optional<Appointment> findAppointmentById(Integer id)
+    {
+	return service.findAppointmentById(id);
+    }
 }
