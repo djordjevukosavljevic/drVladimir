@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rs.drVladimir.Entity.Appointment;
 import rs.drVladimir.Service.AppointmentService;
-
 import java.util.List;
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping(path = "/api/appointment")
@@ -29,9 +30,9 @@ public class AppointmentController
         return service.getAllAppointments();
     }
 
-    @GetMapping
-    public Optional<Appointment> findAppointmentById(Integer id)
-    {
-	return service.findAppointmentById(id);
-    }
+//    @GetMapping
+//    public Optional<Appointment> findAppointmentById(Integer id)
+//    {
+//	    return service.findAppointmentById(id);
+//    }
 }
